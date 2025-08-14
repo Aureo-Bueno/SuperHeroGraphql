@@ -12,7 +12,7 @@ WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
   });
 
 
-  builder.Services.AddGraphQLServer().AddQueryType<Query>().AddProjections().AddFiltering().AddSorting();
+  builder.Services.AddGraphQLServer().AddQueryType<Query>().AddMutationType<Mutation>().AddProjections().AddFiltering().AddSorting();
 }
 
 WebApplication? app = builder.Build();

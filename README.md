@@ -45,3 +45,25 @@ query SuperHeroes {
 }
 
 ```
+
+
+or you try mutation
+
+```bash
+mutation {
+updateSuperHero(
+id: "636a1f89-05ba-4a04-a473-87478369dc34",
+name: "Peter Parker",
+description: "Friendly neighborhood Spider-Man"
+) {
+id
+name
+description
+}
+}
+
+
+```
+
+
+

@@ -6,7 +6,7 @@ public class AppDbContext : DbContext
 {
   public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
   { }
-
+  
   protected override void OnModelCreating(ModelBuilder builder)
   {
     Guid[] ids = new Guid[]{ Guid.NewGuid(), Guid.NewGuid() };
