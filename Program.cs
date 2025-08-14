@@ -6,8 +6,11 @@ WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
   builder.Services.AddControllers();
   builder.Services.AddEndpointsApiExplorer();
   builder.Services.AddSwaggerGen();
+  
+  builder.Services.AddSingleton<SlowQueryInterceptor>();
 
-  builder.Services.AddDbContext<AppDbContext>(options => {
+  builder.Services.AddDbContext<AppDbContext>(options =>
+  {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
   });
 

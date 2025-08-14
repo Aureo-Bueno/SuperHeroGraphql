@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SuperHeroesGraphQL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d7d6aa7891d750ad8b5997116550eff2c8b3c913")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e07b8c62c62b771a94ab32aa94a865efd41e60bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("SuperHeroesGraphQL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SuperHeroesGraphQL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
