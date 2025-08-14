@@ -2,8 +2,8 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SuperHeroesGraphQL.Context;
 
 #nullable disable
@@ -18,24 +18,24 @@ namespace SuperHeroesGraphQL.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("SuperHeroesGraphQL.Entities.Movie", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<Guid>("SuperHeroId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -46,16 +46,16 @@ namespace SuperHeroesGraphQL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1852deb8-bc3e-4931-901c-b65d855ba8c2"),
+                            Id = new Guid("ef2399b0-3292-4aa5-a157-e498d70c8786"),
                             Description = "Superman is a fictional superhero. The character was created by writer Jerry Siegel and artist Joe Shuster, and first appeared in the comic book Action Comics #1 (cover-dated June 1938 and published April 18, 1938).",
-                            SuperHeroId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            SuperHeroId = new Guid("253a3137-0404-4274-a15f-bcf608ce8a71"),
                             Title = "Superman"
                         },
                         new
                         {
-                            Id = new Guid("fb584691-98ce-4951-9293-15be12ca6cd0"),
+                            Id = new Guid("a2db1d07-5491-4b22-bf67-417f079340bc"),
                             Description = "Batman is a fictional superhero appearing in American comic books published by DC Comics. The character was created by artist Bob Kane and writer Bill Finger,[2][3] and first appeared in Detective Comics #27 (May 1939).",
-                            SuperHeroId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            SuperHeroId = new Guid("2968f15c-fa74-4058-b790-3feec7934faf"),
                             Title = "Batman"
                         });
                 });
@@ -64,16 +64,16 @@ namespace SuperHeroesGraphQL.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<Guid>("SuperHeroId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<string>("SuperPower")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -84,16 +84,16 @@ namespace SuperHeroesGraphQL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1852deb8-bc3e-4931-901c-b65d855ba8c2"),
+                            Id = new Guid("1c6c0a5d-dbb3-489d-9a9c-d851673ccbbf"),
                             Description = "Superman's powers include incredible strength, the ability to fly, and invulnerability.",
-                            SuperHeroId = new Guid("1852deb8-bc3e-4931-901c-b65d855ba8c2"),
+                            SuperHeroId = new Guid("253a3137-0404-4274-a15f-bcf608ce8a71"),
                             SuperPower = "Superhuman strength, speed, stamina and durability"
                         },
                         new
                         {
-                            Id = new Guid("fb584691-98ce-4951-9293-15be12ca6cd0"),
+                            Id = new Guid("fce10a99-29d4-408f-962e-78b079ca69c8"),
                             Description = "Batman's primary character traits can be summarized as \"wealthy, physical prowess, deductive abilities and obsession\".",
-                            SuperHeroId = new Guid("fb584691-98ce-4951-9293-15be12ca6cd0"),
+                            SuperHeroId = new Guid("2968f15c-fa74-4058-b790-3feec7934faf"),
                             SuperPower = "Genius-level intellect"
                         });
                 });
@@ -102,13 +102,13 @@ namespace SuperHeroesGraphQL.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -117,13 +117,13 @@ namespace SuperHeroesGraphQL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1852deb8-bc3e-4931-901c-b65d855ba8c2"),
+                            Id = new Guid("253a3137-0404-4274-a15f-bcf608ce8a71"),
                             Description = "Superman is a fictional superhero. The character was created by writer Jerry Siegel and artist Joe Shuster, and first appeared in the comic book Action Comics #1 (cover-dated June 1938 and published April 18, 1938).",
                             Name = "Superman"
                         },
                         new
                         {
-                            Id = new Guid("fb584691-98ce-4951-9293-15be12ca6cd0"),
+                            Id = new Guid("2968f15c-fa74-4058-b790-3feec7934faf"),
                             Description = "Batman is a fictional superhero appearing in American comic books published by DC Comics. The character was created by artist Bob Kane and writer Bill Finger,[2][3] and first appeared in Detective Comics #27 (May 1939).",
                             Name = "Batman"
                         });

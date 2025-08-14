@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/user/Desktop/SuperHeroesGraphQL/SuperHeroesGraphQL.csproj": {}
+    "/Users/user/Desktop/SuperHeroGraphql/SuperHeroesGraphQL.csproj": {}
   },
   "projects": {
-    "/Users/user/Desktop/SuperHeroesGraphQL/SuperHeroesGraphQL.csproj": {
+    "/Users/user/Desktop/SuperHeroGraphql/SuperHeroesGraphQL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/user/Desktop/SuperHeroesGraphQL/SuperHeroesGraphQL.csproj",
+        "projectUniqueName": "/Users/user/Desktop/SuperHeroGraphql/SuperHeroesGraphQL.csproj",
         "projectName": "SuperHeroesGraphQL",
-        "projectPath": "/Users/user/Desktop/SuperHeroesGraphQL/SuperHeroesGraphQL.csproj",
+        "projectPath": "/Users/user/Desktop/SuperHeroGraphql/SuperHeroesGraphQL.csproj",
         "packagesPath": "/Users/user/.nuget/packages/",
-        "outputPath": "/Users/user/Desktop/SuperHeroesGraphQL/obj/",
+        "outputPath": "/Users/user/Desktop/SuperHeroGraphql/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/user/.nuget/NuGet/NuGet.Config"
@@ -32,7 +32,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net7.0": {
@@ -64,6 +70,10 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
@@ -80,6 +90,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -88,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.405/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }

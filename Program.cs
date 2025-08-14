@@ -8,8 +8,9 @@ WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
   builder.Services.AddSwaggerGen();
 
   builder.Services.AddDbContext<AppDbContext>(options => {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
   });
+
 
   builder.Services.AddGraphQLServer().AddQueryType<Query>().AddProjections().AddFiltering().AddSorting();
 }
