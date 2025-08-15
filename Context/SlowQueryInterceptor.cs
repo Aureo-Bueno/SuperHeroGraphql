@@ -12,11 +12,11 @@ public class SlowQueryInterceptor : DbCommandInterceptor
     _logger = logger;
   }
   
-  private const int _slowQueryThreshold = 200;
+  private const int SlowQueryThreshold = 200;
 
   public override DbDataReader ReaderExecuted(DbCommand command, CommandExecutedEventData eventData, DbDataReader result)
   {
-    if (eventData.Duration.TotalMilliseconds > _slowQueryThreshold)
+    if (eventData.Duration.TotalMilliseconds > SlowQueryThreshold)
     {
       _logger.LogInformation($"Slow query duration: {eventData.Duration.TotalMilliseconds}, command: {command.CommandText}");
     }
