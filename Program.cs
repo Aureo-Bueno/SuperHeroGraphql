@@ -1,5 +1,4 @@
-using Microsoft.EntityFrameworkCore;
-using SuperHeroesGraphQL.Context;
+using SuperHeroesGraphQL.Configuration;
 
 WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
 {
@@ -7,15 +6,8 @@ WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
   builder.Services.AddEndpointsApiExplorer();
   builder.Services.AddSwaggerGen();
   
-  builder.Services.AddSingleton<SlowQueryInterceptor>();
-
-  builder.Services.AddDbContext<AppDbContext>(options =>
-  {
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
-  });
-
-
-  builder.Services.AddGraphQLServer().AddQueryType<Query>().AddMutationType<Mutation>().AddProjections().AddFiltering().AddSorting();
+  builder.Services.AddApplicationServices(builder.Configuration.GetConnectionString("DefaultConnection")
+                                           ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found."));
 }
 
 WebApplication? app = builder.Build();
